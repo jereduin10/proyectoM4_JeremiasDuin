@@ -20,3 +20,6 @@ export const PRIORITY_LABELS: Record<Priority, string> = {
   medium: 'Media',
   high: 'Alta',
 }
+
+export type TaskFilter = 'all' | 'pending' | 'completed'
+export type TaskSort = 'recent' | 'priority' | 'dueDate'

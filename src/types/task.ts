@@ -14,3 +14,9 @@ export interface Task {
 // Lo que completa el usuario en el formulario.
 // El resto (id, userId, completed, createdAt) lo pone la app o Firestore.
 export type TaskFormData = Pick<Task, 'title' | 'description' | 'priority' | 'dueDate'>
+
+export const PRIORITY_LABELS: Record<Priority, string> = {
+  low: 'Baja',
+  medium: 'Media',
+  high: 'Alta',
+}

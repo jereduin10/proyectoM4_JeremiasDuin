@@ -1,3 +1,17 @@
+import { Route, Routes } from 'react-router-dom'
+import ProtectedRoute from './components/ProtectedRoute'
+import LoginPage from './pages/LoginPage'
+import RegisterPage from './pages/RegisterPage'
+import TasksPage from './pages/TasksPage'
+
 export default function App() {
-  return <h1 className="text-3xl font-bold text-blue-600 p-4">Hola Tailwind</h1>
+  return (
+    <Routes>
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
+      <Route element={<ProtectedRoute />}>
+        <Route path="/" element={<TasksPage />} />
+      </Route>
+    </Routes>
+  )
 }

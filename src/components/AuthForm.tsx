@@ -27,6 +27,7 @@ export default function AuthForm({
     try {
       await action()
     } catch (err) {
+      console.error(err)
       setError(getAuthErrorMessage(err))
     } finally {
       setSubmitting(false)

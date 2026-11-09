@@ -1,18 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { filterTasks, sortTasks } from './taskUtils'
-import type { Task } from '../types/task'
+import { makeTask } from '../test/factories'
 
-const makeTask = (overrides: Partial<Task> = {}): Task => ({
-  id: '1',
-  userId: 'user-1',
-  title: 'Tarea',
-  description: '',
-  completed: false,
-  priority: 'medium',
-  dueDate: null,
-  createdAt: 1000,
-  ...overrides,
-})
 
 describe('filterTasks', () => {
   const tasks = [

@@ -8,6 +8,9 @@ import { logout } from '../services/authService'
 import { createTask, deleteTask, toggleTaskCompleted, updateTask } from '../services/taskService'
 import type { Task, TaskFilter, TaskFormData, TaskSort } from '../types/task'
 import { filterTasks, sortTasks } from '../utils/taskUtils'
+import SendSummaryButton from '../components/SendSummaryButton'
+import { sendSummaryEmail } from '../services/emailService'
+
 
 export default function TasksPage() {
   const { user } = useAuth()
@@ -79,6 +82,11 @@ export default function TasksPage() {
           sort={sort}
           onFilterChange={setFilter}
           onSortChange={setSort}
+        />
+
+        <SendSummaryButton
+          onSend={() => sendSummaryEmail(tasks)}
+          disabled={tasks.length === 0}
         />
 
         {actionError && <p role="alert" className="text-sm text-red-600">{actionError}</p>}

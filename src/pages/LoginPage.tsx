@@ -12,6 +12,7 @@ export default function LoginPage() {
   return (
     <AuthForm
       title="Iniciar sesión"
+      description="Accedé a tu cuenta para ver y gestionar tus tareas diarias. Tus tareas son privadas: solo vos podés verlas."
       submitLabel="Entrar"
       onSubmit={loginWithEmail}
       onGoogle={loginWithGoogle}

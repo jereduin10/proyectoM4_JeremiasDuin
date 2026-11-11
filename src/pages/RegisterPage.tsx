@@ -11,6 +11,7 @@ export default function RegisterPage() {
   return (
     <AuthForm
       title="Crear cuenta"
+      description="Creá tu cuenta para organizar tus tareas diarias. Se guardan en la nube y podés acceder desde cualquier dispositivo."
       submitLabel="Registrarme"
       onSubmit={registerWithEmail}
       onGoogle={loginWithGoogle}

@@ -55,4 +55,11 @@ describe('AuthForm', () => {
 
     expect(onGoogle).toHaveBeenCalled()
   })
+
+  it('muestra el texto explicativo cuando se le pasa', () => {
+    renderForm({ description: 'Accedé a tu cuenta para ver tus tareas.' })
+
+    expect(screen.getByText('Accedé a tu cuenta para ver tus tareas.')).toBeInTheDocument()
+  })
+
 })

@@ -3,6 +3,7 @@ import { getAuthErrorMessage } from '../services/authService'
 
 interface AuthFormProps {
   title: string
+  description?: string
   submitLabel: string
   onSubmit: (email: string, password: string) => Promise<unknown>
   onGoogle: () => Promise<unknown>
@@ -11,6 +12,7 @@ interface AuthFormProps {
 
 export default function AuthForm({
   title,
+  description,
   submitLabel,
   onSubmit,
   onGoogle,
@@ -41,7 +43,11 @@ export default function AuthForm({
   return (
     <main className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <div className="w-full max-w-sm bg-white rounded-xl shadow p-6">
-        <h1 className="text-2xl font-bold mb-4">{title}</h1>
+                <header className="mb-4">
+          <p className="text-sm font-semibold text-blue-600">Gestor de tareas</p>
+          <h1 className="text-2xl font-bold">{title}</h1>
+          {description && <p className="text-sm text-gray-600 mt-1">{description}</p>}
+        </header>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-3">
           <input

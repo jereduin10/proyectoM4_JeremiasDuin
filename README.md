@@ -6,6 +6,16 @@ Aplicación web SPA para que los empleados de una pequeña empresa gestionen sus
 
 📦 **Repositorio:** https://github.com/jereduin10/proyectoM4_JeremiasDuin
 
+## Demostración - Envío de correos con AWS SES
+
+El envío de correos con AWS tiene una limitación del modo sandbox de SES. Mientras la cuenta esté en sandbox, SES solo entrega a direcciones verificadas, y la función manda el resumen siempre al email de quien está logueado. Como mi dirección email está verificado muestro a continuación su funcionamiento.
+
+![Demo de la aplicación](docs/screenshots/demo.gif)
+
+- Se presiona el botón de **enviar resumen** por mail.
+- Muestra mensaje de **resumen enviado**.
+- Abro el mail y figura recibido un mail con los datos de las tareas correspondientes.
+
 ## Funcionalidades
 
 - Registro, login y logout con email y contraseña o con Google
